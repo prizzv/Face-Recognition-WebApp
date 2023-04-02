@@ -1,0 +1,14 @@
+lfw
+training_checkpoints
+.lfw.tgz
+data
+lfw.tgz
+mnist-model
+
+siamesemodel.h5
+siamesemodelv2.h5
+siamesemodelv3.h5
+
+application_data
+backend/node_modules
+backend/node_modules
