@@ -1,0 +1,94 @@
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to bottom, #0099CC, #99CCFF);
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+    border: 2px solid #fff;
+    
+  }
+  
+  .form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .form input {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .form button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .switch-form-text {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .switch-form-text a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      flex-direction: row;
+    }
+  
+    .form:not(:first-child) {
+      margin-left: 40px;
+    }
+  }
+  
+.videoElement{
+    width: 250px;
+    height: 250px;
+    background-color: rgb(0, 0, 0);
+}
