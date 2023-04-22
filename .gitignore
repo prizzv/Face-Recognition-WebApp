@@ -12,3 +12,8 @@ siamesemodelv3.h5
 application_data
 backend/node_modules
 backend/node_modules
+backend/local-server/node_modules
+
+app/faceid
+env
+app/__pycache__

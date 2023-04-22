@@ -6,16 +6,17 @@ const fs = require("fs");
 const session = require('express-session')
 const cookieParser = require('cookie-parser');
 
-const axios = require('axios');
+
+const tf = require('@tensorflow/tfjs');
 
 //To parse form data in POST request body:
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: false }))
 
 // To parse incoming JSON in POST request body:
 app.use(express.json())
 app.set('views', path.join(__dirname, '/views'))
-app.use(methodOverride('_method'))
-app.set('views', path.join(__dirname, 'views'))
+// app.use(methodOverride('_method'))
+
 // Set public as static directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -37,8 +38,12 @@ app.get('/', (req, res) => {
     res.render('main')
 })
 
-app.get('/login', (req, res) => {
-
+app.get('/login', async(req, res) => {
+  try {
+    model = await tf.loadLayersModel('file:///D:/Shashaank/Clg/MiniProjs/Sem6/V1/backend/model/model.json')
+  } catch (error) {
+    console.log(error);
+  }
     res.render('login')
 })
 app.post('/getUserImage', wrapAsync(async(req, res,next) => {

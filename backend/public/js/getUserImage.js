@@ -32,7 +32,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             video.play();
 
             // Take a picture when the user clicks a button
-            document.getElementById('login-submit-button').addEventListener('click', async function () {
+            document.getElementById('capture-image-button').addEventListener('click', async function () {
                 // Draw the video frame onto the canvas
                 var canvas = document.getElementById('canvas');
                 var context = canvas.getContext('2d');
@@ -61,10 +61,19 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 }
 
 // Setting up tfjs with the model we downloaded
-tf.loadLayersModel('model/model.json')
-    .then(function (model) {
-        window.model = model;
-    });
+let model;
+(async function () {
+    
+    model = await tf.loadLayersModel('http://127.0.0.1/model/model.json');
+
+    document.getElementsByClassName('progress-bar').hide();
+    console.log("Model loaded ");
+    console.log(model.summary());
+
+    // .then(function (model) {
+    //     window.model = model;
+    // });
+})();
 
 // Predict function
 var predict = function (input) {

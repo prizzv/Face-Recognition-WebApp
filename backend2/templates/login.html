@@ -1,7 +1,39 @@
-<%- include('partials/header') %>
-    <link rel="stylesheet" href="css/login_page.css">
+<!DOCTYPE html>
+<html lang="en">
 
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/static/login_page.css">
+
+    <title>Login</title>
+
+</head>
+
+<body class="login-signup-body">
+    
+    <div class="login-page">
+        <div class="form">
+            <h1>Login</h1>
+
+            <form class="login-form" action="" method="POST">
+                {{ form.hidden_tag()}}
+                {{form.username}}
+                {{form.email}}
+                {{form.password}}
+                {{form.submit}}
+
+                <p class="message">Not registered? <a href="{{url_for('register')}}">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
 
     <body>
         <div class="container">
@@ -37,4 +69,4 @@
         <script src="js/getUserImage.js"></script>
     </body>
 
-    <%- include('partials/footer') %>
+    
