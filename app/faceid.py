@@ -37,7 +37,7 @@ class CamApp(App):
 
         # Load tensorflow/keras model
         model = creatingSiameseModel()
-        model.load_weights('siamesemodel.h5')
+        model.load_weights('siamesemodelv2.h5')
         # self.model = tf.keras.models.load_model('siamesemodel.h5', custom_objects={'L1Dist':L1Dist})
         self.model = model
 
